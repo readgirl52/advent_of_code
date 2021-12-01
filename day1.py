@@ -19,8 +19,11 @@ sums = []
 for x in range(len(depths) - 2):
     sums.append(int(depths[x]) + int(depths[x + 1]) + int(depths[x + 2]))
 greater = 0
-for y in range(1, len(sums) - 1):
-    if sums[y] > sums[y - 1]:
-        greater += 1
+for y in range(len(sums)):
+    if y > 0:
+        if sums[y] > sums[y - 1]:
+            greater += 1
 print(greater)
 # Somehow the answer is not 1636 or 1760 - both are too low
+# Answer was eventually 1761 - had a minor bug
+
